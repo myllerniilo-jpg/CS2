@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Skin Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-inner">
+                <div>
+                    <h1 data-i18n="appTitle">CS2 Skin Creator</h1>
+                    <p data-i18n="appSubtitle">Design CS2 weapon skins with precision tools.</p>
+                </div>
+                <button id="languageToggle" type="button" class="lang-btn" data-i18n="switchToFinnish">Suomi</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="toolbar">
+                <h3 data-i18n="toolsHeader">Tools</h3>
+
+                <div class="tool-section">
+                    <h4 data-i18n="weaponSection">Weapon</h4>
+                    <select id="weaponSelect" class="full-width">
+                        <optgroup label="Pistols" data-i18n-label="categoryPistols">
+                            <option value="weapon_pist_glock18">Glock-18</option>
+                            <option value="weapon_pist_usp_silencer">USP-S</option>
+                            <option value="weapon_pist_hkp2000">P2000</option>
+                            <option value="weapon_pist_p250">P250</option>
+                            <option value="weapon_pist_tec9">Tec-9</option>
+                            <option value="weapon_pist_fiveseven">Five-SeveN</option>
+                            <option value="weapon_pist_cz75a">CZ75-Auto</option>
+                            <option value="weapon_pist_deagle">Desert Eagle</option>
+                            <option value="weapon_pist_revolver">R8 Revolver</option>
+                            <option value="weapon_pist_elite">Dual Berettas</option>
+                        </optgroup>
+                        <optgroup label="Rifles" data-i18n-label="categoryRifles">
+                            <option value="weapon_rif_ak47" selected>AK-47</option>
+                            <option value="weapon_rif_m4a4">M4A4</option>
+                            <option value="weapon_rif_m4a1_silencer">M4A1-S</option>
+                            <option value="weapon_rif_famas">FAMAS</option>
+                            <option value="weapon_rif_galilar">Galil AR</option>
+                            <option value="weapon_rif_aug">AUG</option>
+                            <option value="weapon_rif_sg556">SG 553</option>
+                        </optgroup>
+                        <optgroup label="SMGs" data-i18n-label="categorySmg">
+                            <option value="weapon_smg_mp9">MP9</option>
+                            <option value="weapon_smg_mac10">MAC-10</option>
+                            <option value="weapon_smg_mp5sd">MP5-SD</option>
+                            <option value="weapon_smg_mp7">MP7</option>
+                            <option value="weapon_smg_ump45">UMP-45</option>
+                            <option value="weapon_smg_p90">P90</option>
+                            <option value="weapon_smg_bizon">PP-Bizon</option>
+                        </optgroup>
+                        <optgroup label="Shotguns" data-i18n-label="categoryShotguns">
+                            <option value="weapon_shot_nova">Nova</option>
+                            <option value="weapon_shot_xm1014">XM1014</option>
+                            <option value="weapon_shot_mag7">MAG-7</option>
+                            <option value="weapon_shot_sawedoff">Sawed-Off</option>
+                        </optgroup>
+                        <optgroup label="Snipers" data-i18n-label="categorySnipers">
+                            <option value="weapon_snip_awp">AWP</option>
+                            <option value="weapon_snip_ssg08">SSG 08</option>
+                            <option value="weapon_snip_scar20">SCAR-20</option>
+                            <option value="weapon_snip_g3sg1">G3SG1</option>
+                        </optgroup>
+                        <optgroup label="Machine Guns" data-i18n-label="categoryMachineGuns">
+                            <option value="weapon_mach_m249">M249</option>
+                            <option value="weapon_mach_negev">Negev</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="drawingToolsSection">Drawing Tools</h4>
+                    <div class="tool-buttons">
+                        <button class="tool-btn active" data-tool="brush" data-i18n="toolBrush" data-i18n-title="toolBrushTitle" title="Brush">Brush</button>
+                        <button class="tool-btn" data-tool="eraser" data-i18n="toolEraser" data-i18n-title="toolEraserTitle" title="Eraser">Eraser</button>
+                        <button class="tool-btn" data-tool="fill" data-i18n="toolFill" data-i18n-title="toolFillTitle" title="Fill">Fill</button>
+                        <button class="tool-btn" data-tool="spray" data-i18n="toolSpray" data-i18n-title="toolSprayTitle" title="Spray">Spray</button>
+                        <button class="tool-btn" data-tool="gradient" data-i18n="toolGradient" data-i18n-title="toolGradientTitle" title="Gradient">Grad</button>
+                    </div>
+
+                    <label><span data-i18n="labelSize">Size</span>: <span id="brushSizeValue">20</span>px</label>
+                    <input type="range" id="brushSize" min="1" max="100" value="20" class="slider">
+
+                    <label><span data-i18n="labelOpacity">Opacity</span>: <span id="opacityValue">100</span>%</label>
+                    <input type="range" id="opacity" min="1" max="100" value="100" class="slider">
+
+                    <label data-i18n="labelHardness">Hardness</label>
+                    <input type="range" id="hardness" min="0" max="100" value="50" class="slider">
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-label" for="drawOverPlacedImages">
+                            <input type="checkbox" id="drawOverPlacedImages">
+                            <span>Draw on placed images</span>
+                        </label>
+                        <label class="checkbox-label" for="eraserAffectsPlacedImages">
+                            <input type="checkbox" id="eraserAffectsPlacedImages">
+                            <span>Eraser affects placed images</span>
+                        </label>
+                        <label class="checkbox-label" for="eraserAffectsPatternLayers">
+                            <input type="checkbox" id="eraserAffectsPatternLayers">
+                            <span>Eraser affects pattern library layers</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="uvSheetSection">UV Sheet</h4>
+                    <select id="uvSheetSelect" class="full-width">
+                        <option value="">--- Select UV Sheet ---</option>
+                        <option value="weapon_pist_glock18">Glock-18</option>
+                        <option value="weapon_pist_usp_silencer">USP-S</option>
+                        <option value="weapon_pist_hkp2000">P2000</option>
+                        <option value="weapon_pist_p250">P250</option>
+                        <option value="weapon_pist_tec9">Tec-9</option>
+                        <option value="weapon_pist_fiveseven">Five-SeveN</option>
+                        <option value="weapon_pist_cz75a">CZ75-Auto</option>
+                        <option value="weapon_pist_deagle">Desert Eagle</option>
+                        <option value="weapon_pist_revolver">R8 Revolver</option>
+                        <option value="weapon_pist_elite">Dual Berettas</option>
+                        <option value="weapon_rif_ak47">AK-47</option>
+                        <option value="weapon_rif_m4a4">M4A4</option>
+                        <option value="weapon_rif_m4a1_silencer">M4A1-S</option>
+                        <option value="weapon_rif_famas">FAMAS</option>
+                        <option value="weapon_rif_galilar">Galil AR</option>
+                        <option value="weapon_rif_aug">AUG</option>
+                        <option value="weapon_rif_sg556">SG 553</option>
+                        <option value="weapon_smg_mp9">MP9</option>
+                        <option value="weapon_smg_mac10">MAC-10</option>
+                        <option value="weapon_smg_mp5sd">MP5-SD</option>
+                        <option value="weapon_smg_mp7">MP7</option>
+                        <option value="weapon_smg_ump45">UMP-45</option>
+                        <option value="weapon_smg_p90">P90</option>
+                        <option value="weapon_smg_bizon">PP-Bizon</option>
+                        <option value="weapon_shot_nova">Nova</option>
+                        <option value="weapon_shot_xm1014">XM1014</option>
+                        <option value="weapon_shot_mag7">MAG-7</option>
+                        <option value="weapon_shot_sawedoff">Sawed-Off</option>
+                        <option value="weapon_snip_awp">AWP</option>
+                        <option value="weapon_snip_ssg08">SSG 08</option>
+                        <option value="weapon_snip_scar20">SCAR-20</option>
+                        <option value="weapon_snip_g3sg1">G3SG1</option>
+                        <option value="weapon_mach_m249">M249</option>
+                        <option value="weapon_mach_negev">Negev</option>
+                    </select>
+                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                        <button id="loadUVSheet" class="btn-primary" style="flex: 1;" data-i18n="loadUVSheet">Load UV Sheet</button>
+                        <button id="disableUVSheet" class="btn" style="flex: 0.4;" data-i18n="disableUVSheet">Off</button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="colorSection">Colors</h4>
+                    <div class="color-picker-container">
+                        <input type="color" id="primaryColor" value="#ff0000">
+                        <input type="color" id="secondaryColor" value="#0000ff">
+                    </div>
+                    <button id="swapColors" class="btn-small" data-i18n="swapColors">Swap</button>
+
+                    <h5 data-i18n="paletteHeader">Palette</h5>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.82rem; color: var(--muted);">
+                        <span id="paletteCount">10 colors</span>
+                        <div style="display: flex; gap: 4px;">
+                            <button id="addToPalette" class="btn-small" style="flex: 0 0 auto; padding: 4px 8px;" title="Add current color to palette">+</button>
+                            <button id="clearPalette" class="btn-small" style="flex: 0 0 auto; padding: 4px 8px;" title="Reset palette to defaults">×</button>
+                        </div>
+                    </div>
+                    <div class="palette-container">
+                        <div class="color-presets" id="colorPresets">
+                            <div class="preset-color" style="background: #ff0000" data-color="#ff0000"></div>
+                            <div class="preset-color" style="background: #00ff00" data-color="#00ff00"></div>
+                            <div class="preset-color" style="background: #0000ff" data-color="#0000ff"></div>
+                            <div class="preset-color" style="background: #ffff00" data-color="#ffff00"></div>
+                            <div class="preset-color" style="background: #ff00ff" data-color="#ff00ff"></div>
+                            <div class="preset-color" style="background: #00ffff" data-color="#00ffff"></div>
+                            <div class="preset-color" style="background: #ffffff" data-color="#ffffff"></div>
+                            <div class="preset-color" style="background: #000000" data-color="#000000"></div>
+                            <div class="preset-color" style="background: #ffa500" data-color="#ffa500"></div>
+                            <div class="preset-color" style="background: #800080" data-color="#800080"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="importImageSection">Pattern Library</h4>
+                    
+                    <div class="pattern-library" id="patternLibrary">
+                        <!-- Pattern items will be added here dynamically -->
+                    </div>
+                    
+                    <button id="addNewPattern" class="btn-primary" data-i18n="addNewPattern">+ Add Pattern Image</button>
+                    <input type="file" id="patternUpload" accept="image/*" style="display: none;" multiple>
+                    
+                    <h5 data-i18n="currentPatternSettings" style="margin-top: 16px;">Pattern Settings</h5>
+
+                    <label data-i18n="patternScaleLabel">Pattern Scale</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="patternScale" min="1" max="2000" value="100" class="slider">
+                        <input type="number" id="patternScaleValue" min="1" max="2000" value="100" class="slider-input">
+                        <button id="applyPatternScale" type="button" class="btn-tiny" data-i18n="applyPatternScale">Apply</button>
+                    </div>
+
+                    <label data-i18n="patternOffsetXLabel">Offset X</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="patternOffsetX" min="-4096" max="4096" value="0" class="slider">
+                        <input type="number" id="patternOffsetXValue" min="-4096" max="4096" value="0" class="slider-input slider-input-wide">
+                    </div>
+
+                    <label data-i18n="patternOffsetYLabel">Offset Y</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="patternOffsetY" min="-4096" max="4096" value="0" class="slider">
+                        <input type="number" id="patternOffsetYValue" min="-4096" max="4096" value="0" class="slider-input slider-input-wide">
+                    </div>
+
+                    <label data-i18n="patternRotationLabel">Rotation</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="patternRotation" min="-180" max="180" value="0" class="slider">
+                        <input type="number" id="patternRotationValue" min="-180" max="180" value="0" class="slider-input slider-input-wide">
+                    </div>
+
+                    <label data-i18n="patternBlendModeLabel">Blend Mode</label>
+                    <select id="patternBlendMode">
+                        <option value="source-over" data-i18n="blendNormal">Normal</option>
+                        <option value="multiply" data-i18n="blendMultiply">Multiply</option>
+                        <option value="overlay" data-i18n="blendOverlay">Overlay</option>
+                        <option value="screen" data-i18n="blendScreen">Screen</option>
+                    </select>
+
+                    <label data-i18n="weaponPresetLabel">Weapon Preset</label>
+                    <select id="weaponPreset">
+                        <option value="generic" data-i18n="weaponGeneric">Generic / Auto-detect</option>
+                        <option value="ak47" data-i18n="weaponAK47">AK-47</option>
+                        <option value="m4a4" data-i18n="weaponM4A4">M4A4</option>
+                        <option value="awp" data-i18n="weaponAWP">AWP</option>
+                        <option value="deagle" data-i18n="weaponDeagle">Desert Eagle</option>
+                        <option value="glock" data-i18n="weaponGlock">Glock-18</option>
+                        <option value="usp" data-i18n="weaponUSP">USP-S</option>
+                    </select>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="textureSection">Material</h4>
+                    
+                    <label data-i18n="labelRoughness">Roughness</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="roughness" min="0" max="100" value="50" class="slider">
+                        <input type="number" id="roughnessValue" min="0" max="100" value="50" class="slider-input">
+                    </div>
+
+                    <label data-i18n="labelMetalness">Metalness</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="metalness" min="0" max="100" value="0" class="slider">
+                        <input type="number" id="metalnessValue" min="0" max="100" value="0" class="slider-input">
+                    </div>
+
+                    <label data-i18n="labelBrightness">Brightness</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="brightness" min="-100" max="100" value="0" class="slider">
+                        <input type="number" id="brightnessValue" min="-100" max="100" value="0" class="slider-input">
+                        <button id="brightnessReset" class="btn-tiny" style="width: auto; padding: 4px 8px;">↺</button>
+                    </div>
+
+                    <label data-i18n="labelContrast">Contrast</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="contrast" min="-100" max="100" value="0" class="slider">
+                        <input type="number" id="contrastValue" min="-100" max="100" value="0" class="slider-input">
+                        <button id="contrastReset" class="btn-tiny" style="width: auto; padding: 4px 8px;">↺</button>
+                    </div>
+
+                    <label data-i18n="labelSaturation">Saturation</label>
+                    <div class="slider-with-input">
+                        <input type="range" id="saturation" min="-100" max="100" value="0" class="slider">
+                        <input type="number" id="saturationValue" min="-100" max="100" value="0" class="slider-input">
+                        <button id="saturationReset" class="btn-tiny" style="width: auto; padding: 4px 8px;">↺</button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="layersSection">Layers</h4>
+                    <div id="layersList" class="layers-list">
+                        <div class="layer-item active" data-layer="0">
+                            <span data-i18n="layerOne">Layer 1</span>
+                            <button class="btn-tiny" data-action="delete" data-i18n="deleteShort">Del</button>
+                        </div>
+                    </div>
+                    <button id="addLayer" class="btn-primary" data-i18n="addLayer">Add Layer</button>
+                </div>
+
+                <!-- Image Placement System -->
+                <div class="tool-section" id="imagePlacementControls" style="display: none;">
+                    <!-- Controls will be inserted here by JavaScript -->
+                </div>
+                
+                <!-- MAIN IMAGE LOAD BUTTON -->
+                <div class="tool-section" style="background: linear-gradient(135deg, rgba(18, 96, 143, 0.3), rgba(31, 140, 214, 0.2)); border: 2px solid #18b8ff;">
+                    <h4 style="color: #00e5ff; font-size: 1.1rem;">🖼️ IMAGE PLACEMENT</h4>
+                    <p style="font-size: 0.85rem; color: #8ea3be; margin-bottom: 10px;">
+                        Load an image, drag corners to resize, then apply
+                    </p>
+                    <label for="fileUpload" class="btn-success" data-i18n="loadImage" style="font-size: 1rem; padding: 12px;">
+                        📤 Load Image for Placement
+                    </label>
+                    <input type="file" id="fileUpload" accept="image/*" style="display: none;">
+                </div>
+
+                <div class="tool-section">
+                    <h4>Placed Images</h4>
+                    <div id="placedImagesLibrary" class="pattern-library"></div>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="actionsSection">Actions</h4>
+                    <button id="undo" class="btn" data-i18n="undo">Undo</button>
+                    <button id="redo" class="btn" data-i18n="redo">Redo</button>
+                    <button id="clear" class="btn" data-i18n="clear">Clear</button>
+                    <button id="reset" class="btn" data-i18n="reset">Reset Base</button>
+                </div>
+
+                <div class="tool-section">
+                    <h4 data-i18n="ioSection">Export</h4>
+                    <button id="exportPNG" class="btn-success" data-i18n="exportPng">Export PNG</button>
+                    <button id="exportVTF" class="btn-success" data-i18n="exportVtf">Export VTF</button>
+                    <button id="exportWorkshop" class="btn-success" data-i18n="exportWorkshop">Workshop Package</button>
+                </div>
+
+                <div class="tool-section tips-section">
+                    <h4 data-i18n="tipsSection">Tips</h4>
+                    <ul class="tips-list">
+                        <li data-i18n="tipLine1">Hold Shift for straight lines.</li>
+                        <li data-i18n="tipLine2">Use Ctrl+Z and Ctrl+Y for undo/redo.</li>
+                        <li data-i18n="tipLine3">Scroll to zoom texture preview.</li>
+                        <li data-i18n="tipLine4">Enable draw mode before painting in 3D.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="canvas-area">
+                <div class="canvas-controls">
+                    <button id="view2D" class="view-btn active" data-i18n="view2D">2D Texture</button>
+                    <button id="view3D" class="view-btn" data-i18n="view3D">3D Preview</button>
+                    <button id="viewSplit" class="view-btn" data-i18n="viewSplit">Split View</button>
+                    <button id="toggleDrawMode" class="view-btn draw-mode-btn" data-i18n="drawModeOff">Draw Mode (OFF)</button>
+                </div>
+
+                <div class="canvas-quick-tools">
+                    <button id="quickUndo" type="button" class="quick-btn" data-i18n="undo">Undo</button>
+                    <button id="quickRedo" type="button" class="quick-btn" data-i18n="redo">Redo</button>
+                    <button id="quickBrush" type="button" class="quick-btn active" data-i18n="quickBrush">Brush</button>
+                    <button id="quickEraser" type="button" class="quick-btn" data-i18n="quickEraser">Eraser</button>
+                </div>
+
+                <div id="canvasContainer" class="canvas-container">
+                    <canvas id="textureCanvas" width="2048" height="2048"></canvas>
+                    <div id="threeContainer" class="hidden"></div>
+                    <div id="splitView" class="hidden">
+                        <canvas id="textureCanvas2" width="1024" height="1024"></canvas>
+                        <div id="threeContainer2"></div>
+                    </div>
+                </div>
+
+                <div class="canvas-info">
+                    <span id="canvasInfo" data-i18n="canvasInfo">Size: 2048x2048 | Zoom: 100%</span>
+                    <span id="cursorPos">X: 0, Y: 0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="OBJLoader.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+# ⚡ Pika-opas - Korjattu sovellus
+
+## ✅ KAIKKI KORJATTU!
+
+### 🎯 Nopeat ohjeet:
+
+1. **Avaa:** `index.html` (tai `START.bat`)
+2. **Valitse ase:** Vasemmalla valikosta (esim. AK-47)
+3. **Odota 1 sekunti** → Automaattisesti 3D-tila
+4. **Näet aseen!** Pyöritä hiirellä
+5. **Vaihda 2D-tilaan** → Aloita piirtäminen
+6. **Vaihda takaisin 3D** → Näet tekstuurin aseessa!
+
+---
+
+## 🔧 Mitä korjattiin:
+
+| Ongelma | Ratkaisu |
+|---------|----------|
+| ❌ Piirtäminen ei toiminut | ✅ Korjattu - Three.js ladataan nyt oikein |
+| ❌ Ase ei näy | ✅ Automaattinen vaihto 3D-tilaan |
+| ❌ ES6-moduuliongelmat | ✅ Takaisin klassisiin skripteihin |
+
+---
+
+## 🐛 Debuggaus:
+
+**Paina F12 → Konsoli**
+
+Pitäisi näkyä:
+```
+✅ All requirements met
+✅ 3D viewer initialized  
+✅ CS2 Skin Creator initialized successfully!
+✅ Weapon loaded successfully!
+```
+
+Jos näet ❌ punaisia → Lue **KORJATTU.md**
+
+---
+
+## 💡 Pikavinkit:
+
+- **Piirtäminen:** 2D-tilassa vasemmalla värit → piirrä → 3D-tila → katso
+- **Ase näkyy:** Valitse ase → odota sekunti → näkyy 3D:ssä
+- **Tekstuuri:** Piirrä 2D → vaihda 3D → päivittyy automaattisesti
+
+---
+
+**Nyt kaikki toimii! Aloita luominen! 🎨**
+
+Lue tarkemmin: **KORJATTU.md**

@@ -1,0 +1,16 @@
+{
+  "name": "cs2-skin-creator",
+  "version": "1.0.0",
+  "description": "CS2 Skin Creator with UV Map Preprocessing",
+  "main": "preprocess-uv-maps.js",
+  "scripts": {
+    "preprocess": "node preprocess-uv-maps.js",
+    "start": "start START.bat"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "MIT"
+}
