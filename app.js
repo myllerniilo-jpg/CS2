@@ -100,6 +100,7 @@ class CS2SkinCreator {
         this.uvSheetVisible = false;
         this.uvSheetCanvas = null;
         this.uvSheetOpacity = 0.35;
+        this.uvSheetDisplayMode = 'both'; // 'above', 'below', or 'both'
         this.textureFlipY = false;
         
         // Pattern library - multiple patterns
@@ -289,7 +290,13 @@ class CS2SkinCreator {
         
         // Start animation loop for image placement preview
         this.startAnimationLoop();
-        
+
+        // Setup collapsible sections
+        this.setupCollapsibleSections();
+
+        // Setup UV display toggle
+        this.setupUVDisplayToggle();
+
         console.log('Initialization complete!');
     }
     
@@ -302,6 +309,32 @@ class CS2SkinCreator {
             requestAnimationFrame(animate);
         };
         requestAnimationFrame(animate);
+    }
+
+    setupCollapsibleSections() {
+        document.querySelectorAll('.section-toggle[data-target]').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const targetId = toggle.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                if (!content) return;
+                toggle.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+        });
+    }
+
+    setupUVDisplayToggle() {
+        const toggleContainer = document.getElementById('uvDisplayToggle');
+        if (!toggleContainer) return;
+
+        toggleContainer.querySelectorAll('.toggle-btn[data-uv-mode]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                toggleContainer.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                this.uvSheetDisplayMode = btn.getAttribute('data-uv-mode');
+                this.composeLayers();
+            });
+        });
     }
     
     saveBaseLayerData() {
@@ -1321,8 +1354,13 @@ class CS2SkinCreator {
         const scaleY = canvasRect.height / this.canvas.height;
         const displaySize = Math.max(8, this.brushSize * Math.min(scaleX, scaleY));
 
+        const x = clientX - containerRect.left + container.scrollLeft;
+        const y = clientY - containerRect.top + container.scrollTop;
+
+        // Use transform for GPU-accelerated positioning (avoids layout thrashing)
         this.cursorOverlay.style.width = `${displaySize}px`;
         this.cursorOverlay.style.height = `${displaySize}px`;
+        this.cursorOverlay.style.transform = `translate(${x - displaySize / 2}px, ${y - displaySize / 2}px)`;
 
         if (this.currentTool === 'eraser') {
             this.cursorOverlay.style.borderStyle = 'dashed';
@@ -1338,8 +1376,6 @@ class CS2SkinCreator {
             this.cursorOverlay.style.backgroundColor = 'transparent';
         }
 
-        this.cursorOverlay.style.left = `${clientX - containerRect.left + container.scrollLeft}px`;
-        this.cursorOverlay.style.top = `${clientY - containerRect.top + container.scrollTop}px`;
         this.cursorOverlay.classList.remove('hidden');
 
         this.lastPointerX = clientX;
@@ -2088,14 +2124,14 @@ class CS2SkinCreator {
         // Keep composed texture opaque so erased transparent pixels do not appear black in 3D.
         this.ctx.fillStyle = this.compositeBaseColor;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        
-        // Draw UV sheet first (as background)
-        if (this.uvSheetVisible && this.uvSheetCanvas) {
+
+        // Draw UV sheet below textures (if mode is 'below' or 'both')
+        if (this.uvSheetVisible && this.uvSheetCanvas && (this.uvSheetDisplayMode === 'below' || this.uvSheetDisplayMode === 'both')) {
             this.ctx.globalAlpha = this.uvSheetOpacity;
             this.ctx.drawImage(this.uvSheetCanvas, 0, 0);
             this.ctx.globalAlpha = 1;
         }
-        
+
         // Draw layers on top
         for (let i = 0; i < this.layers.length; i++) {
             if (this.layers[i].visible) {
@@ -2108,8 +2144,8 @@ class CS2SkinCreator {
         this.ctx.globalAlpha = 1;
         this.ctx.globalCompositeOperation = 'source-over';
 
-        // Draw UV sheet AGAIN on top with lower opacity so it's always visible as a reference guide
-        if (this.uvSheetVisible && this.uvSheetCanvas) {
+        // Draw UV sheet above textures (if mode is 'above' or 'both')
+        if (this.uvSheetVisible && this.uvSheetCanvas && (this.uvSheetDisplayMode === 'above' || this.uvSheetDisplayMode === 'both')) {
             this.ctx.globalAlpha = 0.3;
             this.ctx.drawImage(this.uvSheetCanvas, 0, 0);
             this.ctx.globalAlpha = 1;
@@ -4174,7 +4210,8 @@ class CS2SkinCreator {
     updateUVSheetButtons() {
         const loadBtn = document.getElementById('loadUVSheet');
         const disableBtn = document.getElementById('disableUVSheet');
-        
+        const uvToggle = document.getElementById('uvDisplayToggle');
+
         if (this.uvSheetVisible) {
             if (loadBtn) {
                 loadBtn.style.backgroundColor = '#0f8d62';
@@ -4184,6 +4221,9 @@ class CS2SkinCreator {
                 disableBtn.style.backgroundColor = '#0f8d62';
                 disableBtn.style.color = '#fff';
             }
+            if (uvToggle) {
+                uvToggle.style.display = '';
+            }
         } else {
             if (loadBtn) {
                 loadBtn.style.backgroundColor = '';
@@ -4192,6 +4232,9 @@ class CS2SkinCreator {
             if (disableBtn) {
                 disableBtn.style.backgroundColor = '';
                 disableBtn.style.color = '';
+            }
+            if (uvToggle) {
+                uvToggle.style.display = 'none';
             }
         }
     }
