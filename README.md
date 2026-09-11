@@ -1,52 +1,52 @@
 # CS2 Skin Creator 🎨
 
-Ammattimainen nettipohjainen työkalu Counter-Strike 2 -aseiden skinien suunnitteluun. Sisältää runsaasti työkaluja ja mahdollisuuden ladata valmiit skinit Steam Workshoppiin.
+Professional web-based tool for designing Counter-Strike 2 weapon skins. Includes a wide range of tools and the ability to upload finished skins to Steam Workshop.
 
-## 🌟 Ominaisuudet
+## 🌟 Features
 
-### 🖌️ Piirtotyökalut
-- **Sivellin** - Vapaa piirtäminen säädettävällä koolla, läpinäkyvyydellä ja pehmyydellä
-- **Pyyhekumi** - Tekstuurin poisto
-- **Täyttö** - Väritäyttö valitulle alueelle
-- **Suihke** - Spray-efekti
-- **Liukuväri** - Gradient-työkalut
+### 🖌️ Drawing Tools
+- **Brush** - Free drawing with adjustable size, opacity, and softness
+- **Eraser** - Texture removal
+- **Fill** - Color fill for selected area
+- **Spray** - Spray effect
+- **Gradient** - Gradient tools
 
-### 🎨 Värit & Efektit
-- Kaksi väriä (ensisijainen & toissijainen) helpolla vaihdolla
-- 10 valmista väripalettia
-- Vapaa värinvalitsin
-- Kulumis-, naarmu-, ja ruoste-efektit
-- Metallisuus, hehku ja sumennus
+### 🎨 Colors & Effects
+- Two colors (primary & secondary) with easy switching
+- 10 ready-made color palettes
+- Free color picker
+- Wear, scratch, and rust effects
+- Metallic, glow, and blur effects
 
-### 🎭 Kuviot & Tekstuurit
-- Naamiokuvio
-- Tiikeri-kuviot
-- Liekit
-- Raidat, pisteet
-- Hiilikuitu
-- Kuusikulmiot
-- Ja paljon muuta!
+### 🎭 Patterns & Textures
+- Camouflage pattern
+- Tiger stripes
+- Flames
+- Stripes, dots
+- Carbon fiber
+- Hexagons
+- And much more!
 
-### 📋 Tasojärjestelmä
-- Useita tasoja erikseen hallittavissa
-- Tasojen näkyvyys ja läpinäkyvyys
-- Helppo tasojen lisäys ja poisto
+### 📋 Layer System
+- Multiple individually managed layers
+- Layer visibility and opacity control
+- Easy layer addition and removal
 
-### 👁️ Esikatselut
-- **2D-tila**: Suora tekstuurin muokkaus 2048x2048 resoluutiolla
-- **3D-tila**: Reaaliaikainen 3D-esikatselu valitulla aseella
-- **Jaettu näkymä**: Molemmat näkymät yhtä aikaa
+### 👁️ Preview Modes
+- **2D Mode**: Direct texture editing at 2048x2048 resolution
+- **3D Mode**: Real-time 3D preview with selected weapon
+- **Split View**: Both views simultaneously
 
-### 🔫 Asemallituki
-Sisältää 35 ase mallia:
-- **Pistolit**: Glock-18, USP-S, P2000, Desert Eagle, R8 Revolver, jne.
-- **Kiväärit**: AK-47, M4A4, M4A1-S, AWP, jne.
-- **SMG**: MP9, MAC-10, P90, MP7, jne.
-- **Haulikot**: Nova, XM1014, MAG-7, Sawed-Off
-- **Konekiväärit**: M249, Negev
+### 🔫 Weapon Model Support
+Includes 35 weapon models:
+- **Pistols**: Glock-18, USP-S, P2000, Desert Eagle, R8 Revolver, etc.
+- **Rifles**: AK-47, M4A4, M4A1-S, AWP, etc.
+- **SMG**: MP9, MAC-10, P90, MP7, etc.
+- **Shotguns**: Nova, XM1014, MAG-7, Sawed-Off
+- **Machine Guns**: M249, Negev
 
-### 🎨 Valmiit Skin-tyylit
-Mukana malliset legendaariset skin-tyylit:
+### 🎨 Preset Skin Styles
+Includes sample legendary skin styles:
 - Asiimov
 - Redline
 - Fade
@@ -54,147 +54,147 @@ Mukana malliset legendaariset skin-tyylit:
 - Vulcan
 - Neon Rider
 
-### 💾 Lataa & Tallenna
-- **PNG-vienti**: Lataa tekstuuri PNG-muodossa
-- **VTF-vienti**: Ohjeet VTF-muunnokseen
-- **Workshop-paketti**: Kaikki tiedot Steam Workshop -julkaisuun
+### 💾 Download & Save
+- **PNG Export**: Download texture as PNG
+- **VTF Export**: Instructions for VTF conversion
+- **Workshop Package**: All information for Steam Workshop upload
 
-### ⌨️ Pikanäppäimet
-- `Ctrl + Z` - Kumoa
-- `Ctrl + Y` - Tee uudelleen
-- `Välilyönti` - Vaihda 2D/3D/Jaettu näkymä
-- `Shift + piirto` - Suorat viivat
+### ⌨️ Keyboard Shortcuts
+- `Ctrl + Z` - Undo
+- `Ctrl + Y` - Redo
+- `Space` - Switch between 2D/3D/Split view
+- `Shift + Draw` - Straight lines
 
-## 🚀 Käyttöönotto
+## 🚀 Getting Started
 
-1. Avaa `index.html` selaimessa
-2. Valitse ase listasta
-3. Aloita suunnittelu työkaluilla!
+1. Open `index.html` in your browser
+2. Select a weapon from the list
+3. Start designing with the tools!
 
-### Vaatimukset
-- Moderni selain (Chrome, Firefox, Edge)
-- WebGL-tuki 3D-näkymää varten
-- Suositeltu resoluutio: 1920x1080 tai suurempi
+### Requirements
+- Modern browser (Chrome, Firefox, Edge)
+- WebGL support for 3D preview
+- Recommended resolution: 1920x1080 or higher
 
-## 📖 Käyttöohjeet
+## 📖 User Guide
 
-### Peruspiirtäminen
-1. Valitse **Ase** pudotusvalikosta
-2. Valitse **Piirtotyökalu** (sivellin, pyyhekumi, jne.)
-3. Säädä **Koko** ja **Läpinäkyvyys**
-4. Valitse **Väri**
-5. Piirrä kanvaasille hiirellä tai kosketusnäytöllä
+### Basic Drawing
+1. Select **Weapon** from dropdown
+2. Select **Drawing Tool** (brush, eraser, etc.)
+3. Adjust **Size** and **Opacity**
+4. Choose **Color**
+5. Draw on canvas with mouse or touch
 
-### Efektien lisääminen
-1. Piirrä pohjavärit
-2. Valitse efekti (kuluminen, naarmut, metallisuus)
-3. Efekti lisätään koko tekstuuriin
+### Adding Effects
+1. Draw base colors
+2. Select effect (wear, scratches, metallic)
+3. Effect is applied to entire texture
 
-### Kuvioiden käyttö
-1. Valitse kuvio pudotusvalikosta
-2. Klikkaa "Lisää kuvio"
-3. Kuvio piirretään aktiiviselle tasolle
+### Using Patterns
+1. Select pattern from dropdown
+2. Click "Add Pattern"
+3. Pattern is drawn on active layer
 
-### 3D-Esikatselu
-1. Klikkaa "🎮 3D Esikatselu"
-2. Pyöritä ase hiirellä
-3. Zoomaa hiiren rullalla
-4. Tekstuuri päivittyy reaaliajassa
+### 3D Preview
+1. Click "🎮 3D Preview"
+2. Rotate weapon with mouse
+3. Zoom with mouse wheel
+4. Texture updates in real-time
 
-### Vienti Steam Workshoppiin
-1. Suunnittele skini
-2. Klikkaa "🚀 Workshop-paketti"
-3. Lataa PNG-tiedosto
-4. Käytä **VTFEdit** muuntaaksesi PNG → VTF
-5. Luo VMT-materiaali-tiedosto
-6. Lataa Steam Workshoppiin
+### Exporting to Steam Workshop
+1. Design your skin
+2. Click "🚀 Workshop Package"
+3. Download PNG file
+4. Use **VTFEdit** to convert PNG → VTF
+5. Create VMT material file
+6. Upload to Steam Workshop
 
-## 🛠️ Tekninen toteutus
+## 🛠️ Technical Implementation
 
-### Teknologiat
-- **HTML5 Canvas** - 2D tekstuurin piirtäminen
-- **Three.js** - 3D-mallinnus ja renderöinti
-- **WebGL** - Laitteistokiihdytetty grafiikka
-- **Vanilla JavaScript** - Ei ulkoisia riippuvuuksia (paitsi Three.js)
+### Technologies
+- **HTML5 Canvas** - 2D texture drawing
+- **Three.js** - 3D modeling and rendering
+- **WebGL** - Hardware-accelerated graphics
+- **Vanilla JavaScript** - No external dependencies (except Three.js)
 
-### Rakenne
+### Project Structure
 ```
 CS2 SKIN CREATOR/
-├── index.html          # Pääsivu
-├── styles.css          # Tyylit
-├── app.js              # Pääsovellus
-├── models/             # 3D asemallit (.obj)
+├── index.html          # Main page
+├── styles.css          # Styles
+├── app.js              # Main application
+├── models/             # 3D weapon models (.obj)
 │   ├── weapon_rif_ak47.obj
 │   ├── weapon_snip_awp.obj
-│   └── ... (35 asetta)
-└── README.md           # Tämä tiedosto
+│   └── ... (35 weapons)
+└── README.md           # This file
 ```
 
-### Ominaisuudet koodissa
-- **Tasojen hallinta**: Useita piirrostasoja alpha-blendingilla
-- **Undo/Redo**: 50 toiminnon historia
-- **Suorituskyky**: Optimoitu 2048x2048 tekstuureille
-- **Responsiivinen**: Toimii eri näyttöko'oilla
-- **Touch-tuki**: Toimii tableteilla ja kosketusnäytöillä
+### Key Features in Code
+- **Layer Management**: Multiple drawing layers with alpha-blending
+- **Undo/Redo**: 50-action history
+- **Performance**: Optimized for 2048x2048 textures
+- **Responsive**: Works on different screen sizes
+- **Touch Support**: Works on tablets and touch displays
 
-## 🎯 Tulevat ominaisuudet (TODO)
+## 🎯 Planned Features (TODO)
 
-- [ ] Symmetria-työkalu
-- [ ] Perspektiivipiirtäminen
-- [ ] Lisää valmiita taroja/tarroja
-- [ ] Tekstityökalu parannettu fonteilla
-- [ ] Projektin tallennus ja lataus (JSON)
-- [ ] UV-mapping editori
-- [ ] Batch-käsittely useille aseille
-- [ ] Yhteisöintegraatio (jaa skinit)
-- [ ] AI-avusteiset kuviot
+- [ ] Symmetry tool
+- [ ] Perspective drawing
+- [ ] More preset patterns/decals
+- [ ] Enhanced text tool with fonts
+- [ ] Project save and load (JSON)
+- [ ] UV-mapping editor
+- [ ] Batch processing for multiple weapons
+- [ ] Community integration (share skins)
+- [ ] AI-assisted patterns
 
-## 💡 Vinkit
+## 💡 Tips
 
-### Hyvän Skinin luominen
-1. **Aloita pohjaväristä** - Käytä täyttöä tai liukuväriä
-2. **Lisää yksityiskohtia** - Käytä siveltimen eri kokoja
-3. **Käytä tasoja** - Erota eri elementit omille tasoilleen
-4. **Kokeile efektejä** - Wear ja scratch antavat realistisen ilmeen
-5. **Testaa 3D:ssä** - Tarkista, miltä skini näyttää aseessa
-6. **Käytä viitettä** - Tutki olemassa olevia legendary-skinejä
+### Creating a Good Skin
+1. **Start with base color** - Use fill or gradient
+2. **Add details** - Use brush with different sizes
+3. **Use layers** - Separate different elements on their own layers
+4. **Try effects** - Wear and scratch give realistic appearance
+5. **Test in 3D** - Check how skin looks on weapon
+6. **Use reference** - Study existing legendary skins
 
-### Suorituskyky
-- 2048x2048 on hyvä resoluutio laadukkaalle työlle
-- Käytä tasoja vain tarvittaessa
-- Tallenna välillä (vie PNG varmuuskopioksi)
-- Sulje muut sovellukset raskaassa 3D-esikatslussa
+### Performance
+- 2048x2048 is good resolution for quality work
+- Use layers only when needed
+- Save regularly (export PNG as backup)
+- Close other applications during heavy 3D preview
 
-## 🐛 Tiedossa olevat ongelmat
+## 🐛 Known Issues
 
-- VTF-vienti vaatii ulkoisen työkalun (VTFEdit)
-- Jotkiasemallit saattavat tarvita UV-mappingin säätöä
-- Suuret siveltimen koot voivat olla hitaita vanhemmilla koneilla
+- VTF export requires external tool (VTFEdit)
+- Some weapon models may need UV mapping adjustments
+- Large brush sizes may be slow on older machines
 
-## 📝 Lisenssi
+## 📝 License
 
-Tämä projekti on tehty harrastuksena ja opetuskäyttöön. 
-- Asemallit kuuluvat Valve Corporationille
-- Koodi on vapaasti käytettävissä ja muokattavissa
+This project was created for hobby and educational use.
+- Weapon models belong to Valve Corporation
+- Code is freely available for use and modification
 
-## 🤝 Tuki
+## 🤝 Support
 
-Jos kohtaat ongelmia:
-1. Päivitä selain
-2. Tyhjennä selaimen välimuisti
-3. Tarkista konsoli (F12) virheviestit
-4. Varmista että WebGL toimii: [https://get.webgl.org/](https://get.webgl.org/)
+If you encounter issues:
+1. Update your browser
+2. Clear browser cache
+3. Check console (F12) for error messages
+4. Verify WebGL support: [https://get.webgl.org/](https://get.webgl.org/)
 
-## 🎮 CS2 Workshop-ohjeet
+## 🎮 CS2 Workshop Guide
 
-### VTF-muunnos
-1. Lataa VTFEdit: [https://nemstools.github.io/pages/VTFLib-Download.html](https://nemstools.github.io/pages/VTFLib-Download.html)
-2. Avaa PNG VTFEditissä
+### VTF Conversion
+1. Download VTFEdit: [https://nemstools.github.io/pages/VTFLib-Download.html](https://nemstools.github.io/pages/VTFLib-Download.html)
+2. Open PNG in VTFEdit
 3. Tools → Convert to VTF
-4. Tallenna .vtf-tiedostona
+4. Save as .vtf file
 
-### VMT-tiedoston luonti
-Luo tekstitiedosto `.vmt` esim. `ak47_custom.vmt`:
+### Creating VMT File
+Create text file `.vmt` e.g. `ak47_custom.vmt`:
 ```
 "VertexLitGeneric"
 {
@@ -206,15 +206,15 @@ Luo tekstitiedosto `.vmt` esim. `ak47_custom.vmt`:
 }
 ```
 
-### Workshop-lähetys
-1. Avaa CS2
-2. Päävalikko → Workshop
-3. Lataa VTF ja VMT
-4. Täytä kuvaus ja tagit
-5. Lähetä!
+### Workshop Upload
+1. Open CS2
+2. Main Menu → Workshop
+3. Upload VTF and VMT
+4. Fill in description and tags
+5. Submit!
 
 ---
 
-**Tehty ❤️:llä CS2-yhteisölle**
+**Made ❤️ for the CS2 community**
 
-Onnea skinien suunnitteluun! 🎨🔫
+Good luck with your skin designs! 🎨🔫
